@@ -1,0 +1,16 @@
+<div>
+    <h2 align="center">Lista de Chamados</h2>
+  
+    <div class="user-container" *ngFor="let user of users">
+   
+      <div class="user-card">
+        <p><strong>Call:</strong> <a routerLink="/register/{{user.id}}" class="btn btn-success mx 2">INC100{{ user.id }}</a></p>
+        <p><strong>Name:</strong> {{ user.cliente }}</p>
+        <p><strong>Contato:</strong> {{ user.contato }}</p>
+        <p><strong>Serie:</strong> {{ user.serie }}</p>
+        <p><strong>Defeito:</strong> {{ user.defeito }}</p>
+        <p><strong>Status:</strong> {{ user.status }}</p>
+      </div>
+  
+    </div>
+  </div>

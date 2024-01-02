@@ -1,0 +1,42 @@
+<div class="container">
+    
+    <form *ngIf="callForm" [formGroup]="callForm" class="form-container">
+      <h2 align="center">Detalhes do chamado</h2>
+      <div class="user-container" *ngFor="let user of call">
+        <div class="user-card">
+          <p><strong>Call:</strong> INC001{{ user.id }}</p>
+          <p><strong>Name:</strong> {{ user.cliente }}</p>
+          <p><strong>Contato:</strong> {{ user.contato }}</p>
+          <p><strong>Endereço:</strong> {{ user.endereco }}</p>
+          <p><strong>Cidade:</strong> {{ user.city }}</p>
+          <p><strong>CEP:</strong> {{ user.cep }}</p>
+          <p><strong>Serie:</strong> {{ user.serie }}</p>
+          <p><strong>Defeito:</strong> {{ user.defeito }}</p>
+          <p><strong>Status:</strong> {{ user.status }}</p>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="status"><strong>Novo Status:</strong></label>
+        <select id="status" formControlName="status" class="form-control">
+          <option value="INI">DESLOCAMENTO</option>
+          <option value="ONS">ONSITE</option>
+          <option value="PEN">PENDENTE</option>
+          <option value="CLI">CLIENTE</option>
+          <option value="CAN">CANCELADO</option>
+          <option value="CLO">FECHADO</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="defeito"><strong>Providencia Adotadas:</strong></label>
+        <input type="text" id="defeito" formControlName="defeito" class="form-control" />
+      </div>
+  
+      <div class="button-group">
+        <button type="button" class="btn btn-success" (click)="updateCall()">Atualizar Chamado</button>
+        <button type="button" class="btn btn-primary" (click)="goBack()">Voltar</button>
+      </div>
+  
+    </form>
+  </div>

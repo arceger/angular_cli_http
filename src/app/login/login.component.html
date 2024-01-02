@@ -1,0 +1,15 @@
+<div class="container">
+    <form >
+        <h2 class="form-signin-heading">Login</h2>
+        <p>
+            <label for="username" class="sr-only">Email:</label>
+            <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email"  placeholder="Enter Email">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Senha:</label>
+            <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" class="form-control" placeholder="Enter Password">
+        </p>
+    
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="Login()">Sign in</button>
+    </form>
+</div>

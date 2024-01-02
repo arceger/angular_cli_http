@@ -22,6 +22,27 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## for pwa
+ng add @angular/pwa
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## build for production
+ng build --configuration=production
+
+### carregar module.ts
+
+ng new --no-standalone
+
+
+## para o docker /podman
+
+#### construir a imagem
+podman build -t ffb .
+#### executar
+podman run -p 3000:80 --name ffb --rm ffb
+#### copiar arquivos -- se necessario alguma validacao
+podman cp ffb:/usr/share/nginx/html .
+### logar na vm
+podman exec -it ffb /bin/bash
+
+### remover iamgem
+podman rmi NOME_DA_IMAGEM
