@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit{
       ngOnInit() {
     
         //const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
-        this.http.get<any[]>(`${environment.apiHost}/api/orderlist`, { withCredentials: true }).subscribe({
+        this.http.get<any[]>(`https://ordersrvdocker.onrender.com/api/orderlist`, { withCredentials: true }).subscribe({
             next: data => {
                 this.users = data;
             },

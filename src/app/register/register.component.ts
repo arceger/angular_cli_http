@@ -48,7 +48,8 @@ export class RegisterComponent implements OnInit{
       defeito: this.callForm?.get('defeito')?.value
     };
 
-    this.http.put<any>(`${environment.apiHost}/api/updateOrder/` + callId, dadosAtualizados)
+   // this.http.put<any>(`${environment.apiHost}/api/updateOrder/` + callId, dadosAtualizados)
+    this.http.put<any>(`https://ordersrvdocker.onrender.com/api/updateOrder/` + callId, dadosAtualizados)
       .subscribe(response => {
         console.log('Chamado atualizado com sucesso!', response);
         this.router.navigate(['/home']);
