@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit() {
     const callId = +this.route.snapshot.paramMap.get('id')!;
-    this.http.get<any>(`${environment.apiHost}/api/listcal/` + callId).subscribe(data => {
+    this.http.get<any>(`https://ordersrvdocker.onrender.com/api/listcal/` + callId).subscribe(data => {
       this.call = data;
       if (this.call && this.call.status !== undefined) {
         this.callForm?.setValue({
