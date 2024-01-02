@@ -11,7 +11,7 @@ RUN npm run build --configuration=production
 
 FROM nginx:latest 
 
-COPY --from=build /usr/local/app/dist/ffb/browser /usr/share/nginx/html
+COPY --from=build /usr/local/app/dist/msa/browser /usr/share/nginx/html
 
 EXPOSE 80
 
