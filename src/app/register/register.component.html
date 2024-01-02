@@ -18,7 +18,7 @@
   
       <div class="form-group">
         <label for="status"><strong>Novo Status:</strong></label>
-        <select id="status" formControlName="status" class="form-control">
+        <select id="status" formControlName="status" class="form-control" required>
           <option value="INI">DESLOCAMENTO</option>
           <option value="ONS">ONSITE</option>
           <option value="PEN">PENDENTE</option>
@@ -30,7 +30,7 @@
   
       <div class="form-group">
         <label for="defeito"><strong>Providencia Adotadas:</strong></label>
-        <input type="text" id="defeito" formControlName="defeito" class="form-control" />
+        <input type="text" id="defeito" formControlName="defeito" class="form-control" required maxlength="1000"/>
       </div>
   
       <div class="button-group">
