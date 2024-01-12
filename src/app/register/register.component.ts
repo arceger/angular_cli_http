@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit() {
     const callId = +this.route.snapshot.paramMap.get('id')!;
-    this.http.get<any>('https://ordersrvdocker.onrender.com/api/listcal/' + callId).subscribe(data => {
+      this.http.get<any>('https://ordersrv.azurewebsites.net/api/listcal/' + callId).subscribe(data => {
       this.call = data;
       this.callForm?.setValue({
         status: this.call.status,
@@ -47,8 +47,8 @@ export class RegisterComponent implements OnInit{
         status: this.callForm?.get('status')?.value,
         defeito: this.callForm?.get('defeito')?.value
       };
-  
-      this.http.put<any>(`https://ordersrvdocker.onrender.com/api/updateOrder/` + callId, dadosAtualizados)
+
+      this.http.put<any>(`https://ordersrv.azurewebsites.net/updateOrder/` + callId, dadosAtualizados)
         .subscribe(response => {
           console.log('Chamado atualizado com sucesso!', response);
           this.router.navigate(['/home']);
