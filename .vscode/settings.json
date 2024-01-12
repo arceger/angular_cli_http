@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/38863a2b-9aca-41a6-a6eb-5b641771a71c/resourceGroups/img-order_group/providers/Microsoft.Web/sites/orderfront",
+    "appService.deploySubpath": "."
+}
