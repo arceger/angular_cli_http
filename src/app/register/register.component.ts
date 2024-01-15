@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit{
         defeito: this.callForm?.get('defeito')?.value
       };
 
-      this.http.put<any>(`https://ordersrv.azurewebsites.net/updateOrder/` + callId, dadosAtualizados)
+      this.http.put<any>(`https://ordersrv.azurewebsites.net/api/updateOrder/` + callId, dadosAtualizados)
         .subscribe(response => {
           console.log('Chamado atualizado com sucesso!', response);
           this.router.navigate(['/home']);
